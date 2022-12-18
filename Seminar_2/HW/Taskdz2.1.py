@@ -7,4 +7,12 @@
 # - 198.45 -> 27
 
 n = float(input("Введите число: "))
+while n != int(n):
+    n = n * 10
 print(n)
+summ = 0
+
+while n > 0:
+    summ = summ + n % 10
+    n = n // 10
+print(int(summ))
