@@ -28,3 +28,6 @@ print(int(summ))
 #     summ = summ + nf % 10
 #     nf = nf // 10
 # print(int(summ))
+
+# # Решение 3
+# print(sum(map(int, list(input("Введите дробное число: ").replace(".", "")))))
