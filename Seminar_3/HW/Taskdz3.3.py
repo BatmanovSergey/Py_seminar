@@ -19,8 +19,8 @@ def dec_number(number):
         decade*=10
     return binary
 
-num = int(input('Введите натурльное число: '))
+num = int(input('Введите натуральное число: '))
 bin_number = dec_number(num)
-print(bin_number)
+print(f'Число {num} в двоичной системе выглядит как {bin_number}')
 
 
