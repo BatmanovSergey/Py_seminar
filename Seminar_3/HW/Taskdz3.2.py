@@ -26,11 +26,18 @@ def multiplication_elements(new_list):
     mulpli_list = []
     if len(new_list) % 2 == 0:
         for i in range(len(new_list)//2):
-            mulpli_list.append = new_list[i]
+            mulpli_list.append(new_list[i]*new_list[-1-i])
+    else:
+        for i in range(len(new_list)//2):
+            mulpli_list.append(new_list[i]*new_list[-1-i])
+        mulpli_list.append(new_list[len(new_list)//2])
+
     return mulpli_list
 
 num = int(input('Введите количество чисел: '))
 num_list = find_number(num)
+print('Наш случайный список')
 print(num_list)
 m_list = multiplication_elements(num_list)
+print('Новый список, где элементы это произведение пар чисел случайного списка')
 print(m_list)
