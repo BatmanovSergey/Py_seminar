@@ -14,7 +14,7 @@ import os
 def clear(): return os.system('cls')
 clear()
 
-def find_number(amount):
+def create_list(amount):
     new_list = sample(range(1, (amount+1)*2), k=amount)
     return new_list
 
@@ -25,7 +25,7 @@ def sum_elements(new_list):
     return summ
 
 num = int(input('Введите количество чисел: '))
-num_list = find_number(num)
+num_list = create_list(num)
 print(num_list)
 summ_elem = sum_elements(num_list)
 print(summ_elem)
