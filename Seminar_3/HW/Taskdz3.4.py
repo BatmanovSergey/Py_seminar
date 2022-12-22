@@ -14,14 +14,15 @@
 # Min: 0.14, Max: 0.5. Difference: 0.36
 
 
-from decimal import Decimal
-import random
-
+from random import uniform
+import os
+def clear(): return os.system('cls')
+clear()
 
 def create_list(amount):
     new_list = []
     for i in range(amount):
-        new_list.append(round((random.uniform(1, amount)), 2))
+        new_list.append(round((uniform(1, amount)), 2))
     return new_list
 
 
@@ -44,9 +45,21 @@ def diff_fract_part(new_list):
     diff = round((max_frac - min_frac), 2)
     return max_frac, min_frac, diff
 
-
 num = int(input('Введите натуральное число: '))
 n_list = create_list(num)
 print(n_list)
 d = diff_fract_part(n_list)
 print(f'MAX: {d[0]}, MIN: {d[1]}. Разница: {d[2]}')
+
+
+# def create_list(amount):
+#     new_list = []
+#     for i in range(amount):
+#         new_list.append(round(random.uniform(1, amount), 2))
+#     new_str_list = []
+#     for i in range(len(new_list)):
+#         new_str_list.append(str(new_list[i]))
+#     new_dec_list = []
+#     for i in range(len(new_str_list)):
+#         new_dec_list.append(Decimal(new_str_list[i]))
+#     return new_dec_list
