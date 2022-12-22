@@ -8,7 +8,9 @@
 
 # # Решение 1
 
-n = float(input("Введите число: "))
+from decimal import Decimal
+
+n = Decimal(input("Введите число: "))
 while n != int(n):
     n = n * 10
 summ = 0
@@ -18,7 +20,7 @@ while n > 0:
     n = n // 10
 print(int(summ))
 
-# # Решение 2
+# Решение 2
 # n = input("Введите число: ")
 # m = len(n)
 # nf = float(n)
