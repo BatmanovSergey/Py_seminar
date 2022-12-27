@@ -18,6 +18,8 @@ import os
 def clear(): return os.system('cls')
 clear()
 
+# # Решение 1
+
 n = int(input("Введите число: "))
 num_list = []
 for i in range(-n, n+1):
@@ -29,8 +31,20 @@ pos2 = int(input("Вторая позиция: "))
 composition = 1
 if pos1 <= len(num_list) and pos2 <= len(num_list):
     composition = num_list[pos1-1] * num_list[pos2-1]
-    print(num_list)
     print(composition)
 else:
     print('В данном списке нет элементов с такими позициями')
-    print(num_list)
+    
+
+# # Решение 2
+
+num = int(input("Enter the value of N: "))
+n_1 = int(input("Position one: "))
+n_2 = int(input("Position two: "))
+nums_list = list(range(-num, num + 1))
+print(nums_list)
+len_list = len(nums_list)
+if len_list >= n_1 > 0 and len_list >= n_2 > 0:
+    print(nums_list[n_1 - 1] * nums_list[n_2 - 1])
+else:
+    print("There are no values for these indexes!")

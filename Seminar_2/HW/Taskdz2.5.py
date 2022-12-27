@@ -8,18 +8,19 @@ import os
 clear = lambda: os.system('cls')
 clear()
 
-# # Решение 1
-from random import randrange
+# # Решение 1 - временная перемернная
 
-num_list = list(range(int(input("Введите число: "))))
-print(num_list)
+# from random import randrange
 
-for i in range(len(num_list)):
-    index = randrange(len(num_list))
-    temp = num_list[i]
-    num_list[i] = num_list[index]
-    num_list[index] = temp
-print(num_list)
+# num_list = list(range(int(input("Введите число: "))))
+# print(num_list)
+
+# for i in range(len(num_list)):
+#     index = randrange(len(num_list))
+#     temp = num_list[i]
+#     num_list[i] = num_list[index]
+#     num_list[index] = temp
+# print(num_list)
 
 # # Решение 2
 
@@ -38,7 +39,31 @@ print(num_list)
 #     num_list[index] = temp
 # print(num_list)
 
-# n = int(input("Введите число: ")) # вариант задания списка через list(range(n))
-# num_list = list(range(n))
-# print(num_list)
+# # Решение 3 - кортеж
+
+# from random import randrange
+
+# num = int(input("Введите число: ")) # вариант задания списка через list(range(n))
+# nums_list = list(range(num))
+# print(nums_list)
+# for i in range(num):
+#     n_1, n_2 = randrange(num), randrange(num)
+#     nums_list[n_1], nums_list[n_2] = nums_list[n_2], nums_list[n_1] 
+#     # кортеж чтобы уйти от третьей переменной
+# print(nums_list)
+
+# # Решение 4 - метод enumerate
+
+from random import randrange
+
+# n = int(input('Enter the length of the list: '))
+some_list = list(range(33, 45)) # метод enumerate
+# some_list = list(range(n))
+print(some_list)
+for i, val in enumerate(some_list):
+    j = randrange(len(some_list))
+    some_list[i], some_list[j] = some_list[j], some_list[i]
+print(some_list)
+
+
 
