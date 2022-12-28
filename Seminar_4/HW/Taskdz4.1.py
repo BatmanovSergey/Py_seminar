@@ -18,13 +18,16 @@ number = Decimal(input("Введите натуральное число: "))
 accuracy = str(input("Введите требуемую точность в формате '0.0001': "))
 print(number.quantize(Decimal(accuracy)))
 
+# # Решение 2 (работает только для вещественных чисел)
+
 # from decimal import Decimal, getcontext
+
 # number = Decimal(input("Введите натуральное число: "))
 # accuracy = Decimal(input("Введите требуемую точность: "))
-# print(accuracy)
-# while accuracy<0:
-#         accuracy*=10
-# print(accuracy)    
+# count = 1
+# while accuracy != int(accuracy):
+#     accuracy = accuracy * 10
+#     count+=1
 
-# getcontext().prec=accuracy
-# print(number)
+# getcontext().prec = count
+# print(number*1)
