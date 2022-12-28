@@ -8,17 +8,17 @@
 
 # # Решение 1
 
-# from decimal import Decimal
+from decimal import Decimal
 
-# n = Decimal(input("Введите число: "))
-# while n != int(n):
-#     n = n * 10
-# summ = 0
+n = Decimal(input("Введите число: "))
+while n != int(n):
+    n = n * 10
+summ = 0
 
-# while n > 0:
-#     summ = summ + n % 10
-#     n = n // 10
-# print(int(summ))
+while n > 0:
+    summ = summ + n % 10
+    n = n // 10
+print(int(summ))
 
 # # Решение 2
 
