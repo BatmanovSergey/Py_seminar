@@ -15,23 +15,25 @@
 # out
 # The contents of the files do not match!
 
-
-def read_file(path):
+def read_file(path: str)-> list:
     with open(path, "r", encoding="utf-8") as file:
         file_list = []
         for line in file:
             file_list.append(line.strip("= 0\n"))
         return file_list
 
+def record(any_list: list,some_list: list,path: str) -> str:
+    with open(path, "a", encoding="utf-8") as file:
+        for i in range(len(any_list)):
+            poly_string = any_list[i] + " + " + some_list[i] + " = 0"
+            file.write(f'{poly_string}\n')
+        print('Информация в файл записана')
+
 poly_1_list = read_file("poly_1.txt")
 poly_2_list = read_file("poly_2.txt")
 
 if len(poly_1_list) == len(poly_2_list):
-    with open("poly_u.txt", "a", encoding="utf-8") as poly_u:
-        for i in range(len(poly_1_list)):
-            poly_string = poly_1_list[i] + " + " + poly_2_list[i] + " = 0"
-            poly_u.write(f'{poly_string}\n')
-        print('Информация в файл записана')
+    record(poly_1_list,poly_2_list,"poly_u.txt")
 else:
     with open("poly_u.txt", "a", encoding="utf-8") as poly_u:
         poly_u.write('Содержимое файлов не совпадает')

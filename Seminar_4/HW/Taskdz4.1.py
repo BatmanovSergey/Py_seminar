@@ -12,15 +12,14 @@
 # out
 # 8.988
 
+# # Решение 1
 
-from decimal import Decimal
+from decimal import Decimal, getcontext
 number = Decimal(input("Введите натуральное число: "))
 accuracy = str(input("Введите требуемую точность в формате '0.0001': "))
 print(number.quantize(Decimal(accuracy)))
 
 # # Решение 2 (работает только для вещественных чисел)
-
-# from decimal import Decimal, getcontext
 
 # number = Decimal(input("Введите натуральное число: "))
 # accuracy = Decimal(input("Введите требуемую точность: "))

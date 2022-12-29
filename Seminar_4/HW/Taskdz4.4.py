@@ -12,32 +12,39 @@
 # 4*x^2 - 4 = 0
 
 from random import choice
-def polynomial(n: int) -> str:
+
+def polynomial(n: int, path: str) -> str:
     poly_string = ""
-    with open("poly_2.txt", "a", encoding="utf-8") as poly:
+    with open(path, "a", encoding="utf-8") as file:
         y = choice(range(1, 9))
         poly_string = poly_string +(f"{y}*x^{n} ")
         n-=1
-        while n > 0:
-            y = choice(range(-9, 10))
-            if y > 0:
-                poly_string = poly_string + (f"+ {y}*x^{n} ")
-            elif y < 0:
-                poly_string = poly_string + (f"- {y*-1}*x^{n} ")
-            n-=1    
+        while n >= 0:
+            y = choice(range(0, 9))
+            if n > 1:
+                if y > 0:
+                    poly_string = poly_string + (f"+ {y}*x^{n} ")
+                elif y < 0:
+                    poly_string = poly_string + (f"- {y*-1}*x^{n} ") 
+            elif n == 1:
+                if y > 0:
+                    poly_string = poly_string + (f"+ {y}*x ")
+                elif y < 0:
+                    poly_string = poly_string + (f"- {y*-1}*x ")        
             if n == 0:
-                y = choice(range(-9, 9))
                 if y > 0:
                     poly_string = poly_string + (f'+ {y} = 0')
                 elif y < 0:
                     poly_string = poly_string + (f'- {y*-1} = 0')
                 else:
                     poly_string = poly_string + '= 0'
-        poly.write(f'{poly_string}\n')
+            n-=1   
+        file.write(f'{poly_string}\n')
         return poly_string
 
 number = input('Введите натуральное число: ')
 if number.isdigit() and int(number) > 0:
-    print(polynomial(int(number)))
+    print(polynomial(int(number), "poly_2.txt"))
+    print('Информация в файл записана')
 else:
     print('Введено некорректное значение.')
