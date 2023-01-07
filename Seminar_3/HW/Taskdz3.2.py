@@ -34,13 +34,21 @@ def multiplication_elements(new_list):
 
     return mulpli_list
 
-# num = int(input('Введите количество чисел: '))
-# num_list = create_list(num)
-# print('Наш случайный список')
-# print(num_list)
-# m_list = multiplication_elements(num_list)
-# print('Новый список, где элементы это произведение пар чисел случайного списка')
-# print(m_list)
+def multiplication_elements(new_list): # более кореектная запись метода
+    mulpli_list = []
+    for i in range(len(new_list)//2):
+        mulpli_list.append(new_list[i]*new_list[-1-i])
+    if len(new_list) % 2 != 0:
+        mulpli_list.append(new_list[len(new_list)//2])
+    return mulpli_list
+
+num = int(input('Введите количество чисел: '))
+num_list = create_list(num)
+print('Наш случайный список')
+print(num_list)
+m_list = multiplication_elements(num_list)
+print('Новый список, где элементы это произведение пар чисел случайного списка')
+print(m_list)
 
 # # Решение 2
 
@@ -64,3 +72,22 @@ def multiplication_elements(new_list):
 # all_list = list_rand_nums(int(input("Number of numbers: ")))
 # print(all_list)
 # print(prod_pairs(all_list))
+
+# # Решение 3
+
+# def mult_lst(lst):
+#     l = len(lst) // 2 + 1 if len(lst) % 2 != 0 else len(lst) // 2
+#     new_lst = [lst[i] * lst[len(lst) - i - 1] for i in range(l)]
+#     if len(lst) % 2 != 0:
+#         new_lst[-1] = lst[len(lst) // 2]
+#     return new_lst
+
+# def num_list(num_count):
+#     new_list = sample(range(1, (num_count + 1) * 2), k=num_count)
+#     return new_list
+
+# num = int(input("Ваедите размер списка: "))
+# n_list = num_list(num)
+# print(n_list)
+# m_list = mult_lst(n_list)
+# print(m_list)
