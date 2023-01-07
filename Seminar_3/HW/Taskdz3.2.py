@@ -34,7 +34,7 @@ def multiplication_elements(new_list):
 
     return mulpli_list
 
-def multiplication_elements(new_list): # более кореектная запись метода
+def multiplication_elements(new_list): # более корректная запись метода
     mulpli_list = []
     for i in range(len(new_list)//2):
         mulpli_list.append(new_list[i]*new_list[-1-i])
