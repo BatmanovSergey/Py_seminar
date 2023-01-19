@@ -15,14 +15,23 @@
 # [24, 15, 23, 25]
 from random import sample
 
-def list_rand_nums(count: int):
+def list_rand_nums(count: int)-> list:
     if count < 0:
         print("Negative value of the number of numbers!")
         return []
-    list_nums = sample(count*2, k=count)
+    list_nums = sample(range(1, (count*2)), count)
     return list_nums
 
-print(list_rand_nums(10))
+def values_previous_element(any_list: list)-> list:
+    new_list =[any_list[i] for i in range(1, len(any_list)) if any_list[i] > any_list[i-1]]
+    return new_list
+
+num = int(input('Введите натуральное число: '))
+our_list = list_rand_nums(num)
+print(our_list)
+result_list = values_previous_element(our_list)
+print(result_list)
+
 
 
 
