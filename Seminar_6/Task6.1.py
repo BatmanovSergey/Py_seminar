@@ -50,4 +50,19 @@ print(sort_s(d))
 print(culc(sort_s(d)))
 print(eval(d))
 
- 
+# # List Comprehension и тернарный оператор
+
+# num=[]
+# for i in range(10):
+#     if i % 2 == 0:
+#         num.append(i)
+# print(num)
+
+# num1= [i for i in range(10) if i % 2 == 0 ]
+# print(num1)
+
+# num2= [i for i in range(10) if not i % 2 ]
+# print(num2)
+
+# num3= [i+10 if i % 2 == 0 else i**3 for i in range(10)]
+# print(num3)
