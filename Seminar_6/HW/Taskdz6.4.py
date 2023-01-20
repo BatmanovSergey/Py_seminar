@@ -22,6 +22,8 @@ def dict_creater(string: str)-> dict:
             my_dict[name.split()[1][0]].append(name)
         else:
             my_dict[name.split()[1][0]] = [name]
+    
+    print(my_dict)
 
     for key, value in my_dict.items():
         value = sorted(value)
@@ -48,7 +50,7 @@ def dict_creater(string: str)-> dict:
 
 names = "Иван Сергеев, Инна Серова, Петр Алексеев, "\
         "Илья Иванов, Анна Савельева, Юнона Ветрякова, "\
-        "Борис Аркадьев, Антон Серов, Павел Анисимов".split(', ')
+        "Борис Аркадьев, Антон Серов, Павел Анисимов, Юрий Антонов".split(', ')
 
 
 result = dict_creater(names)

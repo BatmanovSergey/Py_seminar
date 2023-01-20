@@ -21,12 +21,12 @@
 
 from random import choice
 
-def joke(num, uniq):
+def joke(num: int, uniq: int)-> list:
     nouns = ["автомобиль", "лес", "огонь", "город", "дом"]
     adverbs = ["сегодня", "вчера", "завтра", "позавчера", "ночью", "когда-то", "где-то"]
     adjectives = ["веселый", "яркий", "зеленый", "утопичный", "мягкий"] 
     final_joke = []
-    if uniq == True:
+    if uniq:
         list_of_lists = [nouns, adverbs, adjectives]
         shortest_length = min(len(i) for i in [nouns, adverbs, adjectives])
         for i in range(shortest_length):
@@ -59,8 +59,8 @@ def joke(num, uniq):
             final_joke.append(" ".join(new_joke))
     return final_joke 
 
-jo = input('Введите количество шуток: ')
-un = bool(input('Введите уникальность: да или нет: '))
+jo = int(input('Введите количество шуток: '))
+un = int(input('Введите уникальность: да -> 1 или нет -> 0: '))
 
 print(joke(jo, un))
 
