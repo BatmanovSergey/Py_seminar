@@ -13,6 +13,7 @@
 # out
 # [28, 20, 10, 5, 1, 24, 7, 15, 23, 25]
 # [24, 15, 23, 25]
+
 from random import sample
 
 def list_rand_nums(count: int)-> list:
@@ -22,7 +23,7 @@ def list_rand_nums(count: int)-> list:
     list_nums = sample(range(1, (count*2)), count)
     return list_nums
 
-def values_previous_element(any_list: list)-> list:
+def values_previous_element(any_list: list):
     new_list =[any_list[i] for i in range(1, len(any_list)) if any_list[i] > any_list[i-1]]
     return new_list
 
