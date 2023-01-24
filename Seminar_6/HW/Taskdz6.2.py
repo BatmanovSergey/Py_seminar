@@ -10,6 +10,7 @@
 # 220, 231, 240, 252, 260, 273, 280, 294, 300, 315, 
 # 320, 336, 340, 357, 360, 378, 380, 399, 400, 420]
 
+# # Моё решение
 
 def list_nums(count: int)-> list:
     if count < 20:
@@ -26,3 +27,10 @@ num = int(input('Введите натуральное число: '))
 our_list = list_nums(num)
 result_list = multi(our_list)
 print(result_list)
+
+# # Решение на семинаре
+
+# def uniq_list(num):
+#     return [el for el in range(20, num + 1) if el % 20 == 0 or el % 21 == 0]
+
+# print(uniq_list(int(input())))

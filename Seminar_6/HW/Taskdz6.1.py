@@ -14,6 +14,8 @@
 # [28, 20, 10, 5, 1, 24, 7, 15, 23, 25]
 # [24, 15, 23, 25]
 
+# # Моё решение
+
 from random import sample
 
 def list_rand_nums(count: int)-> list:
@@ -33,6 +35,27 @@ print(our_list)
 result_list = values_previous_element(our_list)
 print(result_list)
 
+# # Решение 1 на семинаре
+
+# from random import sample
+
+# def more_then(num):
+#     my_list = sample(range(num * 3), num)
+#     print(my_list)
+#     return [my_list[num] for num in range(1, len(my_list)) if my_list[num] > my_list[num - 1]]
+
+# print(more_then(int(input())))
+
+# # Решение 2 на семинаре
+
+# from random import randint
+
+# def more_then(num):
+#     original_list = [randint(0, 1000) for _ in range(num)]
+#     print(original_list)
+#     return [num for i, num in enumerate(original_list[1:]) if num > original_list[i]]
+
+# print(more_then(int(input())))
 
 
 
