@@ -48,7 +48,7 @@ def culc(any_list):
 d = input('введите цифры:')
 print(sort_s(d))
 print(culc(sort_s(d)))
-print(eval(d))
+print(eval(d)) # # делает тоже самое, что весь код выше
 
 # # List Comprehension и тернарный оператор
 
