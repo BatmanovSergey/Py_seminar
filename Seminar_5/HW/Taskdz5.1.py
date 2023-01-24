@@ -19,6 +19,8 @@
 
 from random import sample
 
+# # Моё решение 
+
 def words_list (num, word="абв"):
     new_string = ""
     new_string_short = ""
@@ -39,3 +41,23 @@ if number > 1:
     print(out_string[1])
 else:
     print("Введено некорректное число!!!")
+
+# # Решение на семинаре
+
+def list_rand_words(count: int, alp: str = 'абв'):
+    words_list = []
+    for i in range(count):
+        letters = sample(alp, 3)
+        words_list.append("".join(letters))
+    return " ".join(words_list)
+
+# def list_rand_words(count: int, alp: str = 'абв'):
+#     return " ".join("".join(sample(alp, 3)) for _ in range(count))
+
+def simple_sentence(words: str) -> str:
+    # return " ".join(words.replace("абв", "").split())
+    return " ".join(i for i in words.split() if i != "абв")
+
+all_list = list_rand_words(int(input("Number of words: ")))
+print(all_list)
+print(simple_sentence(all_list))
